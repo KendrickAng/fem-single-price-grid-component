@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background-color: #e6eff5;
+    }
+
+    main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 30rem;
+      width: 40rem;
+      border-radius: 32px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .card-intro {
+      font-family: 'Karla', sans-serif;
+      padding: 2.5rem;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      background-color: #ffffff;
+      height: 14rem;
+      width: 40rem;
+    }
+
+    .card-intro>h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: hsl(179, 62%, 43%);
+    }
+
+    .card-intro>h2 {
+      margin-top: 1.5rem 0 0 0;
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: hsl(71, 73%, 54%);
+    }
+
+    .card-intro>p {
+      margin: 0.75rem 0 0 0;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #9AA7BE;
+    }
+
+    .card-pricing {
+      font-family: 'Karla', sans-serif;
+      padding: 2.5rem;
+      border-bottom-left-radius: inherit;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      background-color: hsl(179, 62%, 43%);
+      color: #ffffff;
+      height: 16rem;
+      width: 20rem;
+      letter-spacing: -0.2px;
+    }
+
+    .card-pricing>h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+
+    .card-pricing>h2 {
+      margin: 1.125rem 0 0 0;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    .card-pricing>h2>span {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.5;
+      line-height: 1.5rem;
+    }
+
+    .card-pricing>p {
+      margin: 0.25rem 0 0 0;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
+
+    .card-pricing>button {
+      margin: 1.625rem 0 0 0;
+      width: 100%;
+      height: 3rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: hsl(71, 73%, 54%);
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .card-offerings {
+      padding: 2.5rem;
+      border-bottom-right-radius: inherit;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      background-color: hsl(179, 62%, 43%);
+      height: 16rem;
+      width: 20rem;
+      opacity: 0.85;
+      font-family: 'Karla', sans-serif;
+    }
+
+    .card-offerings>h1 {
+      margin: 0;
+
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: #ffffff;
+    }
+
+    .card-offerings>ul {
+      list-style-type: none;
+      margin: 1.125rem 0 0 0;
+      padding: 0;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    .card-offerings>ul>li {
+      margin: 0;
+      padding: 0;
+      line-height: 1.25rem;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    @media screen and (max-width: 1440px) {
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        border-radius: auto;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      .card-intro {
+        height: 17rem;
+        width: 20rem;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+      }
+
+      .card-intro>h1 {
+        font-size: 1.25rem;
+      }
+
+      .card-intro>h2 {
+        font-size: 1rem;
+        line-height: 1rem;
+      }
+
+      .card-intro>p {
+        font-size: 0.875rem;
+        line-height: 1.625rem;
+      }
+
+      .card-pricing {
+        border-radius: 0;
+      }
+
+      .card-offerings {
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="card-intro">
+        <h1>Join our community</h1>
+        <h2>30-day, hassle-free money back guarantee</h2>
+        <p>
+          Gain access to our full library of tutorials along with expert code reviews.
+          Perfect for any developers who are serious about honing their skills.</p>
+      </div>
+
+      <div class="card-pricing">
+        <h1>Monthly Subscription</h1>
+        <h2>&dollar;29 <span>per month</span></h2>
+        <p>Full access for less than &dollar;1 a day</p>
+        <button>Sign Up</button>
+      </div>
+
+      <div class="card-offerings">
+        <h1>Why Us</h1>
+        <ul>
+          <li>Tutorials by industry experts</li>
+          <li>Peer &amp; expert code review</li>
+          <li>Coding exercises</li>
+          <li>Access to our GitHub repos</li>
+          <li>Community forum</li>
+          <li>Flashcard decks</li>
+          <li>New videos every week</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+
+</html>
